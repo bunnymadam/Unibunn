@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Unibun</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <header class="nav-header">
+    <nav class="navbar">
+      <div class="logo">Unibun</div>
+      <div class="nav-links">
+        <a href="#" class="nav-item">Home</a>
+        <div class="dropdown">
+          <a href="#" class="nav-item">Products</a>
+          <div class="dropdown-content">
+            <div class="mega-menu">
+              <div class="menu-column">
+                <h3>Category 1</h3>
+                <a href="#">Item 1</a>
+                <a href="#">Item 2</a>
+              </div>
+              <div class="menu-column">
+                <h3>Category 2</h3>
+                <a href="#">Item 3</a>
+                <a href="#">Item 4</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="nav-item">About</a>
+      </div>
+      <div class="nav-controls">
+        <div class="search-container">
+          <input type="text" id="searchInput" placeholder="Search...">
+          <button id="voiceSearch"><i class="fas fa-microphone"></i></button>
+        </div>
+        <button id="themeToggle">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <!-- Content goes here -->
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
+   </nav>
+  </header>
+  <main>
+    <section class="hero-slider">
+      <div class="slides">
+        <div class="slide active">
+          <img src="https://picsum.photos/1920/600" alt="Deal 1">
+          <div class="slide-content">
+            <h1>Summer Sale</h1>
+            <p>Up to 50% off on selected items</p>
+            <div class="countdown" data-end="2024-03-01">
+              <span class="days">00</span>d
+              <span class="hours">00</span>h
+              <span class="minutes">00</span>m
+              <span class="seconds">00</span>s
+            </div>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="https://picsum.photos/1920/600?2" alt="Deal 2">
+          <div class="slide-content">
+            <h1>New Arrivals</h1>
+            <p>Check out our latest collection</p>
+          </div>
+        </div>
+      </div>
+      <button class="slider-nav prev">&lt;</button>
+      <button class="slider-nav next">&gt;</button>
+    </section>
+
+    <section class="personalized-sections">
+      <div class="section best-for-you">
+        <h2>Best for You</h2>
+        <div class="product-grid">
+          <div class="product-card">
+            <div class="product-image">
+              <img src="https://picsum.photos/300/300" alt="Product">
+              <button class="quick-preview">Quick View</button>
+            </div>
+            <div class="product-info">
+              <h3>Product Name</h3>
+              <p class="price">$99.99</p>
+              <div class="product-actions">
+                <button class="wishlist"><i class="fas fa-heart"></i></button>
+                <button class="add-to-cart">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+          <!-- More product cards... -->
+        </div>
+      </div>
+
+      <div class="section trending">
+        <h2>Trending Deals</h2>
+        <div class="product-grid">
+          <!-- Similar product cards... -->
+        </div>
+      </div>
+
+      <div class="section recently-viewed">
+        <h2>Recently Viewed</h2>
+        <div class="product-grid">
+          <!-- Similar product cards... -->
+        </div>
+      </div>
+    </section>
+
+    <section class="product-section">
+      <div class="product-container">
+        <div class="product-viewer">
+          <model-viewer 
+            src="https://modelviewer.dev/shared-assets/models/chair.glb"
+            alt="3D product view"
+            ar
+            ar-modes="webxr scene-viewer quick-look"
+            camera-controls
+            shadow-intensity="1"
+            auto-rotate>
+          </model-viewer>
+          <button slot="ar-button" class="ar-button">
+            View in your space
+          </button>
+        </div>
+
+        <div class="product-info">
+          <h2>Modern Lounge Chair</h2>
+          <div class="price">$599.99</div>
+          
+          <div class="specifications">
+            <h3>Specifications</h3>
+            <ul>
+              <li>Dimensions: 30"W x 32"D x 34"H</li>
+              <li>Material: Premium leather, walnut wood</li>
+              <li>Weight: 45 lbs</li>
+              <li>Colors: Brown, Black, Tan</li>
+            </ul>
+          </div>
+
+          <div class="reviews">
+            <h3>Customer Reviews</h3>
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span>(4.2/5 from 128 reviews)</span>
+            </div>
+            <div class="review-list" id="reviewList">
+              <!-- Reviews will be populated by JavaScript -->
+            </div>
+          </div>
+
+          <div class="qa-section">
+            <h3>Questions & Answers</h3>
+            <div class="qa-list" id="qaList">
+              <!-- Q&A will be populated by JavaScript -->
+            </div>
+          </div>
+        </div>
+
+        <div class="comparison-tool" id="comparisonTool">
+          <h3>Compare Similar Products</h3>
+          <div class="comparison-grid">
+            <!-- Comparison will be populated by JavaScript -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="interactive-features">
+      <!-- Shopping Assistant Chatbot -->
+      <div class="chatbot" id="shopping-assistant">
+        <div class="chat-header">
+          <h3>Shopping Assistant</h3>
+          <button class="toggle-chat" onclick="toggleChat()">
+            <i class="fas fa-comments"></i>
+          </button>
+        </div>
+        <div class="chat-body" id="chat-body">
+          <div class="chat-messages" id="chat-messages"></div>
+          <div class="chat-input">
+            <input type="text" id="user-message" placeholder="Ask about products...">
+            <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live Shopping Events -->
+      <div class="live-events">
+        <div class="event-stream">
+          <h3>Live Now: Summer Collection</h3>
+          <div class="video-container" id="live-stream">
+            <!-- Placeholder for live stream -->
+            <div class="stream-placeholder">
+              <i class="fas fa-video"></i>
+              <p>Live stream starting soon</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rewards Section -->
+      <div class="rewards-section">
+        <h3>Your Rewards</h3>
+        <div class="points-display">
+          <i class="fas fa-star"></i>
+          <span id="reward-points">1250</span> points
+        </div>
+        <div class="rewards-progress">
+          <div class="progress-bar" style="width: 75%"></div>
+          <span>75% to next reward</span>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
